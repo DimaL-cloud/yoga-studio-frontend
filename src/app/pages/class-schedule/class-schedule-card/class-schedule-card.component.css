@@ -1,0 +1,33 @@
+.schedule-card {
+  text-align: center;
+  background-color: var(--calm-green);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-card .icon {
+  margin-bottom: 10px;
+}
+
+.class-type {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--deep-teal);
+}
+
+.class-teacher {
+  font-size: 1rem;
+  color: gray;
+}
+
+.class-schedule {
+  font-size: 0.875rem;
+  color: gray;
+}

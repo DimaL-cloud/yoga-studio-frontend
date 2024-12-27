@@ -1,0 +1,22 @@
+.schedule-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: var(--deep-teal);
+  color: var(--light-gray);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #24a78c;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}

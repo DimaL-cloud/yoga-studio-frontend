@@ -1,0 +1,15 @@
+<section class="teachers-container py-12 px-4">
+  <h1 class="text-center text-3xl font-bold text-deep-teal mb-8">Teachers</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <app-teacher-card
+      *ngFor="let teacher of displayedTeachers"
+      [name]="teacher.name"
+      [title]="teacher.title"
+      [photo]="teacher.photo"
+    ></app-teacher-card>
+  </div>
+
+  <div class="text-center mt-8" *ngIf="hasMoreTeachers()">
+    <button class="button" (click)="loadMoreTeachers()">More</button>
+  </div>
+</section>

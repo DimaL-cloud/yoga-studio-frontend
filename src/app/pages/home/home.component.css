@@ -1,0 +1,41 @@
+.card {
+  background-color: var(--calm-green);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card .icon {
+  color: var(--deep-teal);
+  font-size: 2.5rem;
+}
+
+.card .title {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--deep-teal);
+}
+
+.card .description {
+  margin-top: 0.5rem;
+  color: var(--calm-green);
+  font-size: 1rem;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+}
+
+.map iframe {
+  width: 100%;
+  height: 519px;
+  max-width: 1132px;
+  border-radius: 28px;
+}
