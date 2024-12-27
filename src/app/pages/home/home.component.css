@@ -31,6 +31,7 @@
 .map {
   display: flex;
   justify-content: center;
+  padding: 1rem;
 }
 
 .map iframe {
@@ -38,4 +39,9 @@
   height: 519px;
   max-width: 1132px;
   border-radius: 28px;
+
+  @media (max-width: 768px) {
+    height: 300px;
+    max-width: 90%;
+  }
 }
