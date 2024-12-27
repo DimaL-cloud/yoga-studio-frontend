@@ -1,18 +1,28 @@
-<header class="flex justify-between items-center p-4 bg-calm-green">
-  <div >
-    <a routerLink="/" class="flex items-center">
-      <img src="/logo.svg" alt="Lotus Logo" class="h-12 w-12">
-      <div class="text-xl font-bold text-deep-teal">Lotus</div>
+<header class="header-container">
+  <div class="logo-section">
+    <a routerLink="/" class="logo flex items-center">
+      <img src="/logo.svg" alt="Lotus Logo" class="logo-img">
+      <div class="logo-text">Lotus</div>
     </a>
   </div>
-  <nav class="space-x-10">
+
+  <button class="burger-menu" aria-label="Toggle Menu" (click)="toggleNav()">
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+  </button>
+
+  <nav [class.open]="isNavOpen" class="nav-menu">
     <a routerLink="" routerLinkActive="active" class="nav-link">Home</a>
     <a routerLink="/teachers" routerLinkActive="active" class="nav-link">Teachers</a>
     <a routerLink="/class-schedule" routerLinkActive="active" class="nav-link">Class schedule</a>
     <a routerLink="/goals" routerLinkActive="active" class="nav-link">Goals</a>
+    <button class="button join-button-mobile" (click)="openModal()">Join Us</button>
   </nav>
-  <button class="button" (click)="openModal()">Join Us</button>
+
+  <button class="button join-button-desktop" (click)="openModal()">Join Us</button>
 </header>
+
 <app-join-us
   [visible]="isModalVisible"
   (close)="closeModal()"

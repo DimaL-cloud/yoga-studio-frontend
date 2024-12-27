@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {JoinUsFormModel} from '../../../models/join-us-form.model';
+import {HotToastService} from '@ngxpert/hot-toast';
 
 @Component({
   selector: 'app-join-us',
@@ -16,8 +17,14 @@ export class JoinUsComponent {
 
   joinUsForm: JoinUsFormModel = new JoinUsFormModel('', '', '');
 
+  constructor(private toast: HotToastService) {
+  }
+
   onSubmit() {
     this.clearForm();
+    this.toast.success('Thank you for joining us!', {
+      duration: 2000
+    });
     this.close.emit();
   }
 
