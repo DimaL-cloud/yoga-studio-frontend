@@ -5,7 +5,6 @@ import {NgForOf, NgIf} from '@angular/common';
 @Component({
   selector: 'app-class-schedule-card',
   imports: [
-    NgForOf
   ],
   templateUrl: './class-schedule-card.component.html',
   standalone: true,

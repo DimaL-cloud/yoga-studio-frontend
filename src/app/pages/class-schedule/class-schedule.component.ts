@@ -4,6 +4,7 @@ import {ClassScheduleCardComponent} from './class-schedule-card/class-schedule-c
 import {NgForOf, NgIf} from '@angular/common';
 import {WeatherService} from '../../services/weather.service';
 import {LocationType, WeatherModel} from '../../models/weather.model';
+import {ClassScheduleService} from '../../services/class-schedule.service';
 
 @Component({
   selector: 'app-class-schedule',
@@ -23,21 +24,16 @@ export class ClassScheduleComponent implements OnInit {
 
   weatherData: WeatherModel = new WeatherModel(0, '', '', LocationType.Outside);
 
-  constructor(private weatherService: WeatherService) {
+  constructor(private weatherService: WeatherService,
+              private classScheduleService: ClassScheduleService) {
   }
 
   ngOnInit() {
-    for (let i = 0; i < 10; i++) {
-      this.allClasses.push(new ClassSchedule('Meditation', 'Teacher', [
-        { day: 'Mon', time: '15:00 - 17:00' },
-        { day: 'Wed', time: '16:00 - 18:00' },
-        { day: 'Fri', time: '14:00 - 16:00' }
-      ]));
-      this.allClasses.push(new ClassSchedule('Meditation', 'Teacher', [
-        { day: 'Mon', time: '15:00 - 17:00' },
-      ]));
+   this.classScheduleService.getAllClassSchedules().subscribe(classSchedules => {
+      this.allClasses = classSchedules;
+      this.displayedClasses = this.allClasses.slice(0, 8);
     }
-    this.displayedClasses =  this.allClasses.slice(0, 8);
+    );
     this.weatherService.getCurrentWeather().subscribe({
       next: (data: WeatherModel) => {
         this.weatherData = data; // Assign WeatherModel object

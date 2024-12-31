@@ -1,10 +1,6 @@
 <div class="schedule-card">
   <div class="icon text-4xl text-deep-teal">🧘</div>
-  <h2 class="class-type">{{ schedule.type }}</h2>
+  <h2 class="class-type">{{ schedule.name }}</h2>
   <p class="class-teacher">{{ schedule.teacher }}</p>
-  <div class="class-schedule">
-    <div *ngFor="let item of schedule.schedule">
-      {{ item.day }}: {{ item.time }}
-    </div>
-  </div>
+  <p class="class-schedule">{{ schedule.schedule }}</p>
 </div>

@@ -20,14 +20,13 @@ export class TeachersComponent implements OnInit {
 
   displayedTeachers: Teacher[] = [];
 
+  constructor(private teacherService: TeacherService) {}
 
   ngOnInit() {
-    for (let i = 0; i < 100; i++) {
-      this.allTeachers.push(
-        new Teacher('Name Fullname', 'Title',  'teacher-photo.png' )
-      );
-    }
-    this.displayedTeachers = this.allTeachers.slice(0, 8);
+    this.teacherService.getAllTeachers().subscribe(teachers => {
+      this.allTeachers = teachers;
+      this.displayedTeachers = this.allTeachers.slice(0, 8);
+    });
   }
 
   loadMoreTeachers() {

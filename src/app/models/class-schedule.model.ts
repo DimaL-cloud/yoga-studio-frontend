@@ -1,10 +1,10 @@
 export class ClassSchedule {
-  type: string;
+  name: string;
   teacher: string;
-  schedule: { day: string, time: string }[];
+  schedule: string;
 
-  constructor(type: string, teacher: string, schedule: { day: string, time: string }[]) {
-    this.type = type;
+  constructor(type: string, teacher: string, schedule: string) {
+    this.name = type;
     this.teacher = teacher;
     this.schedule = schedule;
   }
